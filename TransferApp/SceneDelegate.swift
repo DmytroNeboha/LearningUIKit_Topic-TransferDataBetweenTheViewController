@@ -1,9 +1,4 @@
-//
-//  SceneDelegate.swift
-//  TransferApp
-//
-//  Created by Dmytro Neboha on 20.10.2022.
-//
+
 
 import UIKit
 
