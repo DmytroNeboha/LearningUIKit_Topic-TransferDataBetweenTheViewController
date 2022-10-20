@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Сцена A-->
+        <!--Scene A-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="TransferApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,13 +17,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSl-gn-Trn">
-                                <rect key="frame" x="41" y="371" width="308" height="36"/>
+                                <rect key="frame" x="41" y="337" width="308" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95y-rw-ucK">
-                                <rect key="frame" x="30" y="437" width="330" height="37.333333333333314"/>
+                                <rect key="frame" x="30" y="403" width="330" height="37.333333333333314"/>
                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -41,19 +41,42 @@
                                     <action selector="editDataWithProperty:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IXq-Pd-5cc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PlP-5P-0U5">
+                                <rect key="frame" x="30" y="470.33333333333331" width="330" height="37.333333333333314"/>
+                                <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Изменить с помощю segue">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="20" name="HelveticaNeue"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="YHP-Wq-DDr" kind="show" identifier="toEditScreen" id="BKy-SH-WJM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
                         <constraints>
+                            <constraint firstItem="PlP-5P-0U5" firstAttribute="top" secondItem="95y-rw-ucK" secondAttribute="bottom" constant="30" id="0bZ-o0-Per"/>
                             <constraint firstItem="95y-rw-ucK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="6Cu-hE-4zB"/>
                             <constraint firstItem="bSl-gn-Trn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="41" id="9Sh-xe-mmH"/>
-                            <constraint firstItem="bSl-gn-Trn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="228" id="rSI-jo-qXS"/>
+                            <constraint firstItem="PlP-5P-0U5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="9Zg-DM-E8W"/>
+                            <constraint firstItem="bSl-gn-Trn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="194" id="cuE-DP-nSh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PlP-5P-0U5" secondAttribute="trailing" constant="30" id="oXI-ng-Zbn"/>
                             <constraint firstItem="95y-rw-ucK" firstAttribute="top" secondItem="bSl-gn-Trn" secondAttribute="bottom" constant="30" id="w3s-OQ-HKs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="95y-rw-ucK" secondAttribute="trailing" constant="30" id="xp9-Qh-F9O"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bSl-gn-Trn" secondAttribute="trailing" constant="41" id="zY3-yJ-Ksq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Сцена A" largeTitleDisplayMode="always" id="6HJ-uy-bPl"/>
+                    <navigationItem key="navigationItem" title="Scene A" largeTitleDisplayMode="always" id="6HJ-uy-bPl"/>
                     <connections>
                         <outlet property="dataLabel" destination="bSl-gn-Trn" id="u9T-0C-Dpb"/>
                     </connections>
@@ -62,7 +85,7 @@
             </objects>
             <point key="canvasLocation" x="784.61538461538464" y="-2.1327014218009479"/>
         </scene>
-        <!--Сцена B-->
+        <!--Scene B-->
         <scene sceneID="7e2-UZ-vag">
             <objects>
                 <viewController storyboardIdentifier="SecondViewController" id="YHP-Wq-DDr" customClass="SecondViewController" customModule="TransferApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -71,12 +94,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PmH-dE-0Kd">
-                                <rect key="frame" x="30" y="366" width="330" height="45.666666666666686"/>
+                                <rect key="frame" x="30" y="462" width="330" height="45.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycy-kz-fHF">
-                                <rect key="frame" x="30" y="441.66666666666669" width="330" height="37.333333333333314"/>
+                                <rect key="frame" x="30" y="537.66666666666663" width="330" height="37.333333333333371"/>
                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -107,7 +130,7 @@
                             <constraint firstItem="PmH-dE-0Kd" firstAttribute="top" secondItem="klg-um-iw0" secondAttribute="top" constant="319" id="xDx-15-mBS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Сцена B" largeTitleDisplayMode="always" id="J2W-rS-JGf"/>
+                    <navigationItem key="navigationItem" title="Scene B" largeTitleDisplayMode="always" id="J2W-rS-JGf"/>
                     <connections>
                         <outlet property="dataTextField" destination="PmH-dE-0Kd" id="NwE-FM-Iqf"/>
                     </connections>
