@@ -60,5 +60,8 @@ class ViewController: UIViewController, UpdatableDataController {
         }
         destinationController.updatingData = dataLabel.text ?? ""
     }
+    
+    // 3. Вариант: передача данных от B к А с помощю unwind segue
+    @IBAction func unwindToFirstScreen(_ segue: UIStoryboardSegue) {}
 }
 

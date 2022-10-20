@@ -30,4 +30,24 @@ class SecondViewController: UIViewController, UpdatingDataController {
             ViewController in (ViewController as? UpdatableDataController)?.updatedData = dataTextField.text ?? ""
         }
     }
+    // 3.Вариант: передача данных от B к А с помощю unwind segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // определяем идентификатор segue
+        switch segue.identifier {
+        case "toFirstScreen":
+            // обрабатываем переход
+            prepareFirstScreen(segue)
+        default:
+            break
+        }
+    }
+    
+    // подготовка к переходу на новый экран
+    private func prepareFirstScreen(_ segue: UIStoryboardSegue) {
+        // безопасное извлекаем опциональное значение
+        guard let destinationController = segue.destination as? ViewController else {
+            return
+        }
+        destinationController.updatedData = dataTextField.text ?? ""
+    }
 }
