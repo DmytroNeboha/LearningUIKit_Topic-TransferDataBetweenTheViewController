@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hjm-sM-AuD">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,23 +13,23 @@
             <objects>
                 <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="TransferApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSl-gn-Trn">
-                                <rect key="frame" x="41" y="337" width="308" height="36"/>
+                                <rect key="frame" x="41" y="304" width="332" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95y-rw-ucK">
-                                <rect key="frame" x="30" y="403" width="330" height="37.333333333333314"/>
+                                <rect key="frame" x="30" y="370" width="354" height="37.5"/>
                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="Изменить с помощю свойства">
+                                        <fragment content="Изменить с помощью свойства">
                                             <attributes>
                                                 <font key="NSFont" size="20" name="HelveticaNeue"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -42,13 +42,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PlP-5P-0U5">
-                                <rect key="frame" x="30" y="470.33333333333331" width="330" height="37.333333333333314"/>
+                                <rect key="frame" x="30" y="437.5" width="354" height="37"/>
                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="Изменить с помощю segue">
+                                        <fragment content="Изменить с помощью segue">
                                             <attributes>
                                                 <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <font key="NSFont" size="20" name="HelveticaNeue"/>
@@ -61,6 +61,26 @@
                                     <segue destination="YHP-Wq-DDr" kind="show" identifier="toEditScreen" id="BKy-SH-WJM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zex-Tx-G9I">
+                                <rect key="frame" x="30" y="504.5" width="354" height="37.5"/>
+                                <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Изменить с помощью делегата">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="20" name="HelveticaNeue"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="editDataWithDelegate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="woG-zT-dCI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
@@ -69,10 +89,13 @@
                             <constraint firstItem="95y-rw-ucK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="6Cu-hE-4zB"/>
                             <constraint firstItem="bSl-gn-Trn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="41" id="9Sh-xe-mmH"/>
                             <constraint firstItem="PlP-5P-0U5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="9Zg-DM-E8W"/>
-                            <constraint firstItem="bSl-gn-Trn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="194" id="cuE-DP-nSh"/>
+                            <constraint firstItem="Zex-Tx-G9I" firstAttribute="top" secondItem="PlP-5P-0U5" secondAttribute="bottom" constant="30" id="GNr-Sh-bkj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zex-Tx-G9I" secondAttribute="trailing" constant="30" id="bbR-QR-Y89"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PlP-5P-0U5" secondAttribute="trailing" constant="30" id="oXI-ng-Zbn"/>
+                            <constraint firstItem="Zex-Tx-G9I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="pGb-IQ-3R2"/>
                             <constraint firstItem="95y-rw-ucK" firstAttribute="top" secondItem="bSl-gn-Trn" secondAttribute="bottom" constant="30" id="w3s-OQ-HKs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="95y-rw-ucK" secondAttribute="trailing" constant="30" id="xp9-Qh-F9O"/>
+                            <constraint firstItem="bSl-gn-Trn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="160" id="y9M-bK-2kw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bSl-gn-Trn" secondAttribute="trailing" constant="41" id="zY3-yJ-Ksq"/>
                         </constraints>
                     </view>
@@ -90,22 +113,22 @@
             <objects>
                 <viewController storyboardIdentifier="SecondViewController" id="YHP-Wq-DDr" customClass="SecondViewController" customModule="TransferApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mgz-qi-dV3">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PmH-dE-0Kd">
-                                <rect key="frame" x="30" y="332" width="330" height="45.666666666666686"/>
+                                <rect key="frame" x="30" y="325" width="354" height="45.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycy-kz-fHF">
-                                <rect key="frame" x="30" y="407.66666666666669" width="330" height="37.333333333333314"/>
+                                <rect key="frame" x="30" y="400" width="354" height="37.5"/>
                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="Сохранить с помощю свойства">
+                                        <fragment content="Сохранить с помощью свойства">
                                             <attributes>
                                                 <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <font key="NSFont" size="20" name="HelveticaNeue"/>
@@ -119,13 +142,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXV-4k-mm2">
-                                <rect key="frame" x="30" y="475" width="330" height="37.333333333333371"/>
+                                <rect key="frame" x="30" y="468" width="354" height="37.5"/>
                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="Сохранить с помощю unwind">
+                                        <fragment content="Сохранить с помощью unwind">
                                             <attributes>
                                                 <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <font key="NSFont" size="20" name="HelveticaNeue"/>
@@ -138,19 +161,42 @@
                                     <segue destination="S1Z-bo-0c0" kind="unwind" identifier="toFirstScreen" unwindAction="unwindToFirstScreen:" id="z96-kk-dP6"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xty-CU-h9l">
+                                <rect key="frame" x="30" y="535" width="354" height="37.5"/>
+                                <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Сохранить с помощью делегата">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="20" name="HelveticaNeue"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveDataWithDelegate:" destination="YHP-Wq-DDr" eventType="touchUpInside" id="73y-O4-4Wr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="klg-um-iw0"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
-                            <constraint firstItem="klg-um-iw0" firstAttribute="trailing" secondItem="PmH-dE-0Kd" secondAttribute="trailing" constant="30" id="8MR-Ce-1OS"/>
-                            <constraint firstItem="ycy-kz-fHF" firstAttribute="top" secondItem="PmH-dE-0Kd" secondAttribute="bottom" constant="30" id="MeZ-h9-3BH"/>
-                            <constraint firstItem="ycy-kz-fHF" firstAttribute="leading" secondItem="klg-um-iw0" secondAttribute="leading" constant="30" id="NP8-Ka-arM"/>
-                            <constraint firstItem="PmH-dE-0Kd" firstAttribute="top" secondItem="klg-um-iw0" secondAttribute="top" constant="189" id="arP-qw-OWz"/>
-                            <constraint firstItem="cXV-4k-mm2" firstAttribute="leading" secondItem="klg-um-iw0" secondAttribute="leading" constant="30" id="brQ-Tv-e9u"/>
-                            <constraint firstItem="cXV-4k-mm2" firstAttribute="top" secondItem="ycy-kz-fHF" secondAttribute="bottom" constant="30" id="dMo-m7-jX5"/>
-                            <constraint firstItem="klg-um-iw0" firstAttribute="trailing" secondItem="cXV-4k-mm2" secondAttribute="trailing" constant="30" id="hdb-XO-K2o"/>
-                            <constraint firstItem="klg-um-iw0" firstAttribute="trailing" secondItem="ycy-kz-fHF" secondAttribute="trailing" constant="30" id="rZv-Qx-tu6"/>
-                            <constraint firstItem="PmH-dE-0Kd" firstAttribute="leading" secondItem="klg-um-iw0" secondAttribute="leading" constant="30" id="seo-Pw-pXd"/>
+                            <constraint firstItem="klg-um-iw0" firstAttribute="trailing" secondItem="cXV-4k-mm2" secondAttribute="trailing" constant="30" id="0OV-Uu-AmS"/>
+                            <constraint firstItem="PmH-dE-0Kd" firstAttribute="top" secondItem="klg-um-iw0" secondAttribute="top" constant="181" id="3YU-bf-uge"/>
+                            <constraint firstItem="ycy-kz-fHF" firstAttribute="leading" secondItem="klg-um-iw0" secondAttribute="leading" constant="30" id="4sP-J7-oLu"/>
+                            <constraint firstItem="Xty-CU-h9l" firstAttribute="top" secondItem="cXV-4k-mm2" secondAttribute="bottom" constant="29.5" id="9Mn-9a-ZTz"/>
+                            <constraint firstItem="Xty-CU-h9l" firstAttribute="leading" secondItem="klg-um-iw0" secondAttribute="leading" constant="30" id="NjH-H5-IAZ"/>
+                            <constraint firstItem="klg-um-iw0" firstAttribute="trailing" secondItem="ycy-kz-fHF" secondAttribute="trailing" constant="30" id="X57-30-fSh"/>
+                            <constraint firstItem="PmH-dE-0Kd" firstAttribute="leading" secondItem="klg-um-iw0" secondAttribute="leading" constant="30" id="jnk-oV-xBw"/>
+                            <constraint firstItem="cXV-4k-mm2" firstAttribute="top" secondItem="ycy-kz-fHF" secondAttribute="bottom" constant="30.5" id="kdJ-HQ-BC0"/>
+                            <constraint firstItem="klg-um-iw0" firstAttribute="trailing" secondItem="Xty-CU-h9l" secondAttribute="trailing" constant="30" id="l3H-F4-Ara"/>
+                            <constraint firstItem="ycy-kz-fHF" firstAttribute="top" secondItem="PmH-dE-0Kd" secondAttribute="bottom" constant="29.5" id="mgp-B8-WtB"/>
+                            <constraint firstItem="cXV-4k-mm2" firstAttribute="leading" secondItem="klg-um-iw0" secondAttribute="leading" constant="30" id="oAV-Ie-1xD"/>
+                            <constraint firstItem="klg-um-iw0" firstAttribute="trailing" secondItem="PmH-dE-0Kd" secondAttribute="trailing" constant="30" id="wFL-q4-L6o"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Scene B" largeTitleDisplayMode="always" id="J2W-rS-JGf"/>
@@ -169,7 +215,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hjm-sM-AuD" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="TcK-Cv-THR">
-                        <rect key="frame" x="0.0" y="47" width="390" height="96"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -8,7 +8,8 @@ protocol UpdatableDataController: AnyObject {
 }
 
 
-class ViewController: UIViewController, UpdatableDataController {
+class ViewController: UIViewController, UpdatableDataController, DataUpdateProtocol {
+    
     var updatedData: String = "Test Data"
     @IBOutlet var dataLabel: UILabel!
     
@@ -22,7 +23,7 @@ class ViewController: UIViewController, UpdatableDataController {
         updateLabel(withText: updatedData)
     }
     
-    // 1. Вариант: передаём данные с помощю Property
+    // 1. Вариант: передаём данные (от A к B) с помощю Property 
     @IBAction func editDataWithProperty(_ sender: UIButton) {
         // получаем вью контролер, в который происходит переход (от А к B)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -35,12 +36,12 @@ class ViewController: UIViewController, UpdatableDataController {
         self.navigationController?.pushViewController(editScreen as! UIViewController, animated: true)
         }
     
-    // Обновляем данные в текстовой метке (от B к A) с помощю Property
+    // 2. Вариант: Обновляем данные в текстовой метке (от B к A) с помощю Property
     private func updateLabel(withText text: String) {
         dataLabel.text = text
     }
     
-    // 2. Вариант: передаём данные с помощю Segue
+    // 3. Вариант: передаём данные с помощю Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // определяем идентификатор segue
         switch segue.identifier {
@@ -61,7 +62,28 @@ class ViewController: UIViewController, UpdatableDataController {
         destinationController.updatingData = dataLabel.text ?? ""
     }
     
-    // 3. Вариант: передача данных от B к А с помощю unwind segue
+    // 4. Вариант: передача данных от B к А с помощю unwind segue
     @IBAction func unwindToFirstScreen(_ segue: UIStoryboardSegue) {}
+    
+    // 5. Вариант: передача данных с помощю делегирования
+    func onDataUpdate(data: String) {
+        updatedData = data
+        updateLabel(withText: data)
+    }
+    
+    @IBAction func editDataWithDelegate(_ sender: UIButton) {
+        // получаем вью контроллер
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let editScreen = storyboard.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
+        
+        // передаём данные
+        editScreen.updatingData = dataLabel.text ?? ""
+        
+        // устанавливаем текущий класс в качестве делегата
+        editScreen.handleUpdatedDataDelegate = self
+        
+        // открываем следующий экран
+        self.navigationController?.pushViewController(editScreen, animated: true)
+    }
 }
 

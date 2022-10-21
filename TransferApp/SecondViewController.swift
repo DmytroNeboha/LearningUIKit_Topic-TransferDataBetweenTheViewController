@@ -10,11 +10,14 @@ protocol UpdatingDataController: AnyObject {
 class SecondViewController: UIViewController, UpdatingDataController {
     var updatingData: String = ""
     @IBOutlet var dataTextField: UITextField!
+    var handleUpdatedDataDelegate: DataUpdateProtocol?
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    // 1. Вариант: Обновляем данные в текстовой метке (от A к B) с помощю Property
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateTextFieldData(withText: updatingData)
@@ -24,13 +27,13 @@ class SecondViewController: UIViewController, UpdatingDataController {
     private func updateTextFieldData(withText text: String) {
         dataTextField.text = text
     }
-    
+    // 2. Вариант: Обновляем данные в текстовой метке (от B к A) с помощю Property
     @IBAction func saveDataWithProperty(_ sender: UIButton) {
         self.navigationController?.viewControllers.forEach {
             ViewController in (ViewController as? UpdatableDataController)?.updatedData = dataTextField.text ?? ""
         }
     }
-    // 3.Вариант: передача данных от B к А с помощю unwind segue
+    // 4.Вариант: передача данных от B к А с помощю unwind segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // определяем идентификатор segue
         switch segue.identifier {
@@ -49,5 +52,15 @@ class SecondViewController: UIViewController, UpdatingDataController {
             return
         }
         destinationController.updatedData = dataTextField.text ?? ""
+    }
+    
+    // 5. Вариант: передача данных от B к А с помощю делегирования
+    @IBAction func saveDataWithDelegate (_ sender: UIButton) {
+        // получаем обновленные данные
+        let updatedData = dataTextField.text ?? ""
+        // визываем метод делегата
+        handleUpdatedDataDelegate?.onDataUpdate(data: updatedData)
+        // возвращаемся на предыдущий экран
+        navigationController?.popViewController(animated: true)
     }
 }
