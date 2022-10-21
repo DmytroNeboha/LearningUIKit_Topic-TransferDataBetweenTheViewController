@@ -8,10 +8,12 @@ protocol UpdatingDataController: AnyObject {
 
 
 class SecondViewController: UIViewController, UpdatingDataController {
-    var updatingData: String = ""
     @IBOutlet var dataTextField: UITextField!
+    
+    var updatingData: String = ""
     var handleUpdatedDataDelegate: DataUpdateProtocol?
-   
+    var completionHandler: ((String) -> Void)?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +63,17 @@ class SecondViewController: UIViewController, UpdatingDataController {
         // визываем метод делегата
         handleUpdatedDataDelegate?.onDataUpdate(data: updatedData)
         // возвращаемся на предыдущий экран
+        navigationController?.popViewController(animated: true)
+    }
+    
+    // 6. Вариант: передача данных от B к A с помощю замыкания
+    // передача данных с помощю замыкания
+    @IBAction func saveDataWithClosure(_ sender: UIButton) {
+        // получаем обновленные данные
+        let updatedData = dataTextField.text ?? ""
+        // вызываем замыкание
+        completionHandler?(updatedData)
+        // возвращаем на предыдущий экран
         navigationController?.popViewController(animated: true)
     }
 }
